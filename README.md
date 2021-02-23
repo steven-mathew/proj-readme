@@ -1,2 +1,2 @@
-# 🌱 webbler
-A platform for blogging what you learned today.
+# webbler
+🌱 A platform for blogging what you learned today.
