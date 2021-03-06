@@ -5,6 +5,7 @@ import jwt from 'jsonwebtoken'
 import cookie from 'cookie'
 
 import { User } from '../entities/User'
+import auth from '../middleware/auth'
 
 const register = async (req: Request, res: Response) => {
     const { email, username, password } = req.body
@@ -63,24 +64,41 @@ const login = async (req: Request, res: Response) => {
             return res.status(401).json({ password: 'Password is incorrect' })
         }
 
-        const token = jwt.sign({ username }, '27oQPNLa')
+        const token = jwt.sign({ username }, process.env.JWT_SECRET)
 
         res.set('Set-Cookie', cookie.serialize('token', token, {
             httpOnly: true,
-            secure: false,
+            secure: process.env.NODE_END === 'production',
             sameSite: 'strict',
             maxAge: 3600,
             path: '/'
         }))
 
-        return res.json({ user, token })
-    } catch (err) {
-        
-    }
+        return res.json(user)
+    } catch (err) { }
 }
+
+const me = (_: Request, res: Response) => {
+    return res.json(res.locals.user)
+}
+
+const logout = (_: Request, res: Response) => {
+    res.set('Set-Cookie', cookie.serialize('token', '', {
+        secure: process.env.NODE_END === 'production',
+        httpOnly: true,
+        sameSite: 'strict',
+        expires: new Date(0),
+        path: '/'
+    }))
+
+    return res.status(200).json({ success: true })
+}
+
 
 const router = Router()
 router.post('/register', register)
 router.post('/login', login)
+router.get('/me', auth, me)
+router.get('/logout', auth, logout)
 
 export default router
