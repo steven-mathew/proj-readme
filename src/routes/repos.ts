@@ -21,7 +21,7 @@ const createRepo = async (req: Request, res: Response) => {
             .where('lower(repo.name) = :name', { name: name.toLowerCase() })
             .getOne()
     
-        if (repo) errors.name = 'Repo exists already'
+        if (repo) errors.name = 'Repo already exists'
 
         if (Object.keys(errors).length > 0) {
             throw errors
