@@ -4,9 +4,11 @@ import {
     Entity as TOEntity,
     Index,
     JoinColumn,
-    ManyToOne, 
+    ManyToOne,
+    OneToMany, 
 } from "typeorm";
 import {makeId, slugify} from "../util/helpers";
+import Comment from "./Comment";
 
 import Entity from './Entity'
 import Repo from "./Repo";
@@ -36,13 +38,16 @@ export default class Post extends Entity {
     @Column()
     repoName: string
 
-    @ManyToOne(() => User, user => user.posts)
+    @ManyToOne(() => User, (user) => user.posts)
     @JoinColumn({ name: 'username', referencedColumnName: 'username' })
     user: User
 
-    @ManyToOne(() => Repo, repo => repo.posts)
+    @ManyToOne(() => Repo, (repo) => repo.posts)
     @JoinColumn({ name: 'repoName', referencedColumnName: 'name' })
     repo: Repo
+
+    @OneToMany(() => Comment, (comment) => comment.post)
+    comments: Comment[]
 
     @BeforeInsert()
     makeIdAndSlug() {
