@@ -1,0 +1,45 @@
+/* .loading_cont { */
+/*     width: 100%; */
+/*     height: 100%; */
+/*     background: white; */
+/* } */
+
+/* .loading_cont:before { */
+/*     content: ""; */
+/*     width: 100%; */
+/*     height: 100%; */
+/*     left: 0; */
+/*     top: 0px; */
+/*     background: url(https://next.atcom.gr/StaticData/Landing2017/Content/Media/dots-transparent.png) repeat scroll center center; */
+/*     opacity: 0.05; */
+/*     z-index: 0; */
+/* } */
+
+#loader {
+	/* display: inline-block; */
+	position: absolute;
+    z-index: 0;
+	width: 50%;
+	height: 50%;
+	top: 10%;
+	left: 10%;
+	/* margin-left: -400px; */
+	/* margin-top: -400px; */
+}
+
+rect {
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+
+.blobs {
+    -webkit-filter: url("#goo");
+    filter: url("#goo");
+    filter: blur(45px);
+    /* transform: scale(1000px); */
+    opacity: 35%;
+}
+
+.blob {
+	fill: white;
+}
