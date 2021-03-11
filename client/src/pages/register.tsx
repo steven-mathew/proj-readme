@@ -26,7 +26,7 @@ export default function Register() {
             </Head>
             <div className="h-screen bg-gray-100">
                 <section>
-                    <div className="py-6 h-1/6" style={{zIndex: 9999}}>
+                    <div className="py-6 h-1/6">
                         <div className="container flex items-center justify-between mx-auto font-bold">
                             <div>
                                 <ul className="flex">
@@ -57,21 +57,27 @@ export default function Register() {
                         </div>
                     </div>
                 </section>
-                <section className="flex h-5/6" style={{zIndex: 10}}>
-                    <div className="flex justify-center w-full lg:w-1/2">
+                <section className="relative flex h-5/6">
+                    <svg viewBox="60 25 200 200" xmlns="http://www.w3.org/2000/svg" className="absolute h-full" style={{zIndex: 0, filter: 'blur(50px)', opacity: '15%'}}>
+                        <path fill="#000fff" d="M37.8,-45.8C50.2,-42.9,62.5,-33.6,69.9,-20.5C77.3,-7.3,79.8,9.7,71.3,19.2C62.7,28.7,43.2,30.7,29.5,34.1C15.8,37.5,7.9,42.3,-3.8,47.6C-15.5,52.9,-31.1,58.5,-41.4,54C-51.8,49.5,-57,34.9,-57,21.6C-57,8.4,-51.8,-3.4,-50.3,-18.9C-48.8,-34.5,-51,-53.8,-43.2,-58.2C-35.4,-62.5,-17.7,-51.9,-2.5,-48.4C12.7,-44.9,25.3,-48.6,37.8,-45.8Z" transform="translate(100 100)" />
+                    </svg>
+                    <svg viewBox="100 25 200 200" xmlns="http://www.w3.org/2000/svg" className="absolute h-full" style={{zIndex: 0, filter: 'blur(50px)', opacity: '17%'}}>
+                        <path fill="#FF00ff" d="M37.8,-45.8C50.2,-42.9,62.5,-33.6,69.9,-20.5C77.3,-7.3,79.8,9.7,71.3,19.2C62.7,28.7,43.2,30.7,29.5,34.1C15.8,37.5,7.9,42.3,-3.8,47.6C-15.5,52.9,-31.1,58.5,-41.4,54C-51.8,49.5,-57,34.9,-57,21.6C-57,8.4,-51.8,-3.4,-50.3,-18.9C-48.8,-34.5,-51,-53.8,-43.2,-58.2C-35.4,-62.5,-17.7,-51.9,-2.5,-48.4C12.7,-44.9,25.3,-48.6,37.8,-45.8Z" transform="translate(100 100)" />
+                    </svg>
+                    <div className="z-10 flex justify-center w-full lg:w-1/2">
                         <div className="self-center max-w-xl p-6">
-                            <h1 className="mb-20 text-6xl font-bold leading-tight">
+                            <h1 className="mb-20 font-bold leading-tight text-8xl">
                                 Sign Up for<br />
                                 webblit<br />
                             </h1>
-                            <p className="mb-6 text-lg leading-relaxed">
+                            <p className="mb-6 text-2xl leading-relaxed">
                                 If you already have an account, <br />
-                                you can <a href="#" className="text-indigo-600">sign in here</a>
+                                you can <a href="#" className="font-bold text-indigo-600">sign in here</a>
                             </p>
                         </div>
                     </div>
-                    <div className="flex flex-col justify-center pl-6">
-                        <div className="w-96">
+                    <div className="z-10 flex items-center justify-center w-2/3 pl-6">
+                        <div className="w-1/2">
                             <form>
                                 <div className="mb-8">
                                     <input
@@ -130,15 +136,4 @@ export default function Register() {
             </div>
         </div >
     )
-}
-
-
-            // <div className="w-40 h-screen bg-center bg-cover"
-            //     style={{backgroundColor: "pink"}}
-            // >
-            // </div>
-            // <div className="flex flex-col justify-center pl-6">
-            //     <h1 className="mb-2 text-lg">
-            //         Sign up
-            //     </h1>
-            // </div>
+} 
