@@ -2,7 +2,6 @@ import * as React from 'react'
 import Image from 'next/image'
 import Page from '../components/Page'
 import {CenteredColumn} from '../components/Layouts'
-import SignupBox from '../components/Signup'
 import Button from '../components/Button'
 import {Input} from '../components/Input'
 import Link from 'next/link'
@@ -13,7 +12,7 @@ function Register() {
             <CenteredColumn>
                 <div className="space-y-16 md:space-y-24">
                     <div
-                        className="p-8 -mx-4 border-t border-b border-gray-300 border-dashed space-y-4 md:-mx-8 dark:border-gray-700 bg-elevated"
+                        className="p-8 -mx-4 border-t border-b border-gray-300 border-dashed shadow-xl space-y-4 md:-mx-8 dark:border-gray-700 bg-elevated"
                     >
                         <div className="space-y-2">
                             <p className="flex items-center font-title-heading">
