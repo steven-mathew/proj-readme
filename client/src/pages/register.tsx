@@ -3,6 +3,8 @@ import Image from 'next/image'
 import Page from '../components/Page'
 import {CenteredColumn} from '../components/Layouts'
 import SignupBox from '../components/Signup'
+import Button from '../components/Button'
+import {Input} from '../components/Input'
 import Link from 'next/link'
 
 function Register() {
@@ -10,12 +12,51 @@ function Register() {
         <Page>
             <CenteredColumn>
                 <div className="space-y-16 md:space-y-24">
-                    <div className="space-y-12 md:items-center">
-                        <SignupBox />
-                        <div className="flex flex-wrap h-48 bg-yellow-100 grid grid-rows-2 place-content-center">
-                            <div className="w-48 h-48 bg-red-400 rounded-full row-span-2"></div>
-                            <div className="z-10 w-24 h-24 bg-blue-400 row-start-2 row-span-1"></div>
+                    <div
+                        className="p-8 -mx-4 border-t border-b border-gray-300 border-dashed space-y-4 md:-mx-8 dark:border-gray-700 bg-elevated"
+                    >
+                        <div className="space-y-2">
+                            <p className="flex items-center font-title-heading">
+                                Create your account
+        </p>
+                            <p className="text-tertiary">
+                                Join readme.
+                            </p>
                         </div>
+                        <form
+                            className="mt-2 grid grid-cols-1 gap-2 md:grid-cols-3"
+                        >
+                            <label className="md:col-span-3">
+                                <span className="sr-only">Email address</span>
+                                <Input
+                                    placeholder="Email address"
+                                    type="email"
+                                    name="email"
+                                />
+                            </label>
+                            <label className="md:col-span-3">
+                                <span className="sr-only">Username</span>
+                                <Input
+                                    placeholder="Username"
+                                    type="username"
+                                    name="username"
+                                />
+                            </label>
+                            <label className="md:col-span-3">
+                                <span className="sr-only">Password</span>
+                                <Input
+                                    placeholder="Password"
+                                    type="password"
+                                    name="password"
+                                />
+                            </label>
+                            <Button
+                                type="submit"
+                                className="md:col-span-3"
+                            >
+                                Subscribe
+                                </Button>
+                        </form>
                     </div>
                 </div>
             </CenteredColumn>
@@ -25,6 +66,10 @@ function Register() {
 
 // <div className="absolute inset-0 z-10 flex items-center justify-center">
 //     <p className="text-2xl font-bold">This should be on top of the map</p>
+// </div>
+// <div className="flex-wrap h-48 bg-yellow-100 grid grid-rows-2 place-content-center">
+//     <div className="w-48 h-48 bg-red-400 rounded-full col-start-1 row-start-1 row-span-2"></div>
+//     <div className="w-48 h-24 bg-blue-400 row-start-2 col-start-1 bg-opacity-30 bg-clip-padding col-span-full row-span-1" style={{backdropFilter: "blur(20px)"}}></div>
 // </div>
 export default Register
 
