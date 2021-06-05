@@ -2,6 +2,7 @@ import * as React from 'react'
 import Image from 'next/image'
 import Page from '../components/Page'
 import {CenteredColumn} from '../components/Layouts'
+import SignupBox from '../components/Signup'
 import Button from '../components/Button'
 import {Input} from '../components/Input'
 import Link from 'next/link'
@@ -11,51 +12,53 @@ function Register() {
         <Page>
             <CenteredColumn>
                 <div className="space-y-16 md:space-y-24">
-                    <div
-                        className="p-8 -mx-4 border-t border-b border-gray-300 border-dashed shadow-xl space-y-4 md:-mx-8 dark:border-gray-700 bg-elevated"
-                    >
-                        <div className="space-y-2">
-                            <p className="flex items-center font-title-heading">
-                                Create your account
-        </p>
-                            <p className="text-tertiary">
-                                Join readme.
-                            </p>
-                        </div>
-                        <form
-                            className="mt-2 grid grid-cols-1 gap-2 md:grid-cols-3"
+                    <div className="-mx-4 -mt-16 md:mt-0 md:-mx-8">
+                        <div
+                            className="p-8 -mx-4 border-t border-b border-gray-300 border-dashed space-y-4 md:-mx-8 dark:border-gray-700 bg-elevated"
                         >
-                            <label className="md:col-span-3">
-                                <span className="sr-only">Email address</span>
-                                <Input
-                                    placeholder="Email address"
-                                    type="email"
-                                    name="email"
-                                />
-                            </label>
-                            <label className="md:col-span-3">
-                                <span className="sr-only">Username</span>
-                                <Input
-                                    placeholder="Username"
-                                    type="username"
-                                    name="username"
-                                />
-                            </label>
-                            <label className="md:col-span-3">
-                                <span className="sr-only">Password</span>
-                                <Input
-                                    placeholder="Password"
-                                    type="password"
-                                    name="password"
-                                />
-                            </label>
-                            <Button
-                                type="submit"
-                                className="md:col-span-3"
+                            <div className="space-y-2">
+                                <p className="flex items-center font-title-heading">
+                                    Create your account
+                                </p>
+                                <p className="text-tertiary">
+                                    Join readme.
+                                </p>
+                            </div>
+                            <form
+                                className="mt-2 grid grid-cols-1 gap-2 md:grid-cols-3"
                             >
-                                Subscribe
+                                <label className="md:col-span-3">
+                                    <span className="sr-only">Email address</span>
+                                    <Input
+                                        placeholder="Email address"
+                                        type="email"
+                                        name="email"
+                                    />
+                                </label>
+                                <label className="md:col-span-3">
+                                    <span className="sr-only">Username</span>
+                                    <Input
+                                        placeholder="Username"
+                                        type="username"
+                                        name="username"
+                                    />
+                                </label>
+                                <label className="md:col-span-3">
+                                    <span className="sr-only">Password</span>
+                                    <Input
+                                        placeholder="Password"
+                                        type="password"
+                                        name="password"
+                                    />
+                                </label>
+                                <Button
+                                    type="submit"
+                                    className="md:col-span-3"
+                                >
+                                    Subscribe
                                 </Button>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </CenteredColumn>
