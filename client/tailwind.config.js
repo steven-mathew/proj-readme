@@ -1,6 +1,18 @@
+
+const mono = [
+    'Menlo',
+    'ui-monospace',
+    'SFMono-Regular',
+    'Monaco',
+    'Consolas',
+    'Liberation Mono',
+    'Courier New',
+    'monospace',
+]
+
 module.exports = {
     purge: ['./src/**/*.{js,ts,jsx,tsx}'],
-    darkMode: false, // or 'media' or 'class'
+    darkMode: 'class', // or 'media' or 'class'
     theme: {
         boxShadow: {
             sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
@@ -13,7 +25,17 @@ module.exports = {
             inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
             none: 'none',
         },
-        extend: {},
+        extend: {
+            fontFamily: {
+                mono: ['"iA Quattro"', ...mono],
+                code: mono,
+                sans: 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+            },
+            boxShadow: {
+                cardHover:
+                    '0 4px 4.1px rgba(0, 0, 0, 0.012),0 4.9px 5.8px rgba(0, 0, 0, 0.018),0 6.3px 8.4px rgba(0, 0, 0, 0.029),0 8.8px 12.9px rgba(0, 0, 0, 0.05),0 15px 23px rgba(0, 0, 0, 0.11)',
+            },
+        },
     },
     variants: {
         extend: {},

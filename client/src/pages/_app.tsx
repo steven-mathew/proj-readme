@@ -1,5 +1,6 @@
 import '../styles/globals.css'
-import '../styles/blobs.css'
+import '../styles/custom-styles.css'
+import '../styles/prose-styles.css'
 
 import {AppProps} from 'next/app'
 

@@ -1,54 +1,71 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import * as React from 'react'
+import Link from 'next/link'
+import Page from '../components/Page'
+import {CenteredColumn} from '../components/Layouts'
+import Button from '../components/Button'
 
-export default function Home() {
+function Home() {
     return (
-        <div className={styles.container}>
-            <Head>
-                <title>Create Next App</title>
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+        <Page>
+            <CenteredColumn>
+                <div className="space-y-16 md:space-y-24 ">
+                    <div className="space-y-8 md:items-center">
+                        <div className="prose lg:prose-lg text-primary">
+                            <p>
+                                Hey, I&apos;m Brian. I&apos;m a designer,{' '}
+                                <a href="https://designdetails.fm">podcaster</a>,{' '}
+                                <Link href="/writing" passHref>
+                                    <a>writer</a>
+                                </Link>
+                , and{' '}
+                                <a href="https://github.com/brianlovin">software tinkerer</a>.
+                I&apos;m currently building{' '}
+                                <a href="https://github.com/mobile">
+                                    native mobile apps at GitHub
+                </a>
+                .
+              </p>
 
-            <main className={styles.main}>
-                <h1 className={styles.title}>
-                    Welcome to <a href="https://nextjs.org">Next.js!</a>
-                </h1>
+                            <p>
+                                In the past I co-founded{' '}
+                                <a href="https://github.com/withspectrum/spectrum">Spectrum</a>,
+                a platform for online communities. Before that, I worked at
+                Facebook building payments systems, and cut my teeth as a
+                product designer at Buffer.
+              </p>
+                        </div>
+                        <div className="flex space-x-4">
+                            <Link href="/about" passHref>
+                                <a>
+                                    <Button>Learn more about me</Button>
+                                </a>
+                            </Link>
+                            <a href="https://changelog.brianlovin.com">
+                                <Button>My changelog</Button>
+                            </a>
+                        </div>
+                    </div>
+                    <div className="space-y-8">
+                        <h4 className="font-list-heading">Recent Writing</h4>
+                        <Link href="/writing">
+                            <a className="inline-block font-medium highlight-link-hover">
+                                Read all posts &rarr;
+              </a>
+                        </Link>
+                    </div>
 
-                <p className={styles.description}>
-                    Get started by editing{' '}
-                    <code className={styles.code}>pages/index.js</code>
-                </p>
-
-                <div className={styles.grid}>
-                    <a href="https://nextjs.org/docs" className={styles.card}>
-                        <h3>Documentation &rarr;</h3>
-                        <p>Find in-depth information about Next.js features and API.</p>
-                    </a>
-
-                    <a href="https://nextjs.org/learn" className={styles.card}>
-                        <h3>Learn &rarr;</h3>
-                        <p>Learn about Next.js in an interactive course with quizzes!</p>
-                    </a>
-
-                    <a
-                        href="https://github.com/vercel/next.js/tree/master/examples"
-                        className={styles.card}
-                    >
-                        <h3>Examples &rarr;</h3>
-                        <p>Discover and deploy boilerplate example Next.js projects.</p>
-                    </a>
-
-                    <a
-                        href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-                        className={styles.card}
-                    >
-                        <h3>Deploy &rarr;</h3>
-                        <p>
-                            Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-                    </a>
+                    <div className="space-y-8">
+                        <h4 className="font-list-heading">Select Projects</h4>
+                        <Link href="/projects">
+                            <a className="inline-block font-medium highlight-link-hover">
+                                See all projects &rarr;
+              </a>
+                        </Link>
+                    </div>
                 </div>
-            </main>
-        </div>
+            </CenteredColumn>
+        </Page>
     )
 }
+
+export default Home
