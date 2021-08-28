@@ -1,6 +1,9 @@
-// https://github.com/brianlovin/brian-lovin-next/tree/main/src/components
+import {useRouter} from 'next/router'
+import Image from 'next/image'
 
 import * as React from 'react'
+
+import Page from '../Page'
 
 export function CenteredColumn({children}) {
     return (
