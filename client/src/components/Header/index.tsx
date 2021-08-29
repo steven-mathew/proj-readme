@@ -17,7 +17,6 @@ function Header() {
                 </Link>
                 <div className="items-center flex-grow sm:flex space-x-6">
                 </div>
-                <ThemeToggle className="sm:block hover:text-accent transition duration-150" />
             </nav>
         </header>
     )
