@@ -94,6 +94,12 @@ module.exports = {
             boxShadow: {
                 cardHover:
                     '0 4px 4.1px rgba(0, 0, 0, 0.012),0 4.9px 5.8px rgba(0, 0, 0, 0.018),0 6.3px 8.4px rgba(0, 0, 0, 0.029),0 8.8px 12.9px rgba(0, 0, 0, 0.05),0 15px 23px rgba(0, 0, 0, 0.11)',
+                button:
+                    '0px 30px 90px rgba(0, 0, 0, 0.2)',
+                buttonHover:
+                    '0px 40px 100px 4px rgba(0, 0, 0, 0.3)'
+
+
             },
         },
     },
