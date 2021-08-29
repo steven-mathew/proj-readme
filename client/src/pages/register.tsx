@@ -6,7 +6,7 @@ import {CenteredColumn} from '../components/Layouts'
 
 export default function Register() {
     return (
-        <div className="flex light space-y-12 md:space-y-16 bg-primary">
+        <div className="flex w-full h-full light space-y-12 md:space-y-16 bg-primary">
 
             <Head>
                 <title>Register</title>
@@ -59,7 +59,7 @@ export default function Register() {
                         </div>
 
                         <button className="px-6 py-2 bg-white border border-gray-200 rounded-lg hover:shadow-button transition duration-500 text-primary transform hover:scale-110">
-                            Register for readme
+                            Register for readme{' '} 🎉
                         </button>
 
                     </form>
